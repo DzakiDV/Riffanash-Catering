@@ -1,0 +1,165 @@
+/*ANIMATIONS*/
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-link:hover {
+    color: #bebebe !important;
+}
+
+/* HOME */
+
+/* CSS Button di Bagian Contact */
+
+#contact .btn {
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#contact .btn:hover {
+    background-color: white;
+    color: #750405;
+    border-color: #750405;
+}
+.order-button p{
+    text-decoration: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .order-button img{
+        display: none;
+    }
+    .order-button p {
+        margin: 3vw;
+    }
+
+    #contact .btn {
+        margin-top: 2vh;
+        font-size: 4vw;
+    }
+}
+
+iframe {
+    text-align: center;
+}
+
+.accordion-button.collapsed .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.accordion-button .fa-chevron-down {
+    transition: transform 0.2s;
+}
+
+
+/* MENU */
+
+.item {
+    border-radius: 10px;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #a52626);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+    z-index: 1; /* Pastikan layer berada di atas */
+}
+
+.layer h3 {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 200%;
+
+}
+
+.layer p {
+    font-size: 120%;
+    color: white;
+    width: 110%;
+    margin-bottom: 1% !important;
+}
+
+.menu .item {
+    position: relative;
+    background-size: 100%;
+    background-position: center;
+    transition: background-size 0.5s ease-in-out;
+}
+.item .menu-card-title {
+    transition: opacity 0.2s ease-in-out;
+}
+.item .price-tag {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 0s;
+}
+
+.item:hover .price-tag {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+
+.menu:hover .item{
+    background-size: 110%;
+    background-position: center; /* Pusatkan background saat hover */
+}
+
+.item:hover .layer {
+    height: 100%;
+}
+.item:hover .menu-card-title{
+    opacity: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .layer h3 {
+        font-size: 180% !important;
+        margin-bottom: 0 !important;
+    }
+    .layer p {
+        font-size: 110% !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .layer p {
+        font-size: 80% !important;
+        width: 125%;
+    }
+    .layer h3 {
+        margin-bottom:10px ;
+        margin-bottom: 0 !important;
+        font-size: 140% !important;
+    }
+}

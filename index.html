@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Membangun Web Frontend dengan Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/riffanashLogo.png" class="img-fluid" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">F. A. Q.</a>
+                </li>
+                <li class="nav-item">
+                    <a class="line" href="#"> | </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <div id="home" class="home d-flex flex-column flex-md-row">
+        <div class="home-content-kiri d-flex justify-content-center align-items-center flex-grow-1">
+            <div class="home-texts">
+                <p class="display-4 text-white">Manjakan dirimu,</p>
+                <p class="display-3 text-warning">Dengan cita</p>
+                <p class="display-3 text-white">Rasa Nusantara</p>
+                <a href="#contact" class="order-button">
+                    <p>
+                        Order
+                    </p>
+                </a>
+            </div>
+        </div>
+        <div id="homeCarousel" class="carousel slide home-content-kanan d-none d-md-block" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-image bg-img-1"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image bg-img-2"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image bg-img-3"></div>
+                </div>
+            </div>  
+        
+            <!-- Tombol panah kiri -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+        
+            <!-- Tombol panah kanan -->
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        
+    </div>
+    
+    <div id="about" class="about">
+        <div class="about-texts">
+            <div class="about-title d-flex">
+                <p class="text-light">About</p>
+                <p class="text-warning">Us</p>
+            </div>
+            <div class="about-content" id="aboutContent">
+                <p class="text-light">Selamat datang di Riffanash Catering, spesialis masakan Nusantara di Semarang. Kami dengan bangga menyajikan hidangan autentik Indonesia yang tidak hanya lezat, tetapi juga sehat dan dibuat dengan bahan-bahan pilihan terbaik. Dengan fokus pada cita rasa asli Nusantara, kami siap memenuhi kebutuhan kuliner Anda untuk berbagai acara, mulai dari pernikahan, ulang tahun, hingga acara perusahaan. Setiap hidangan kami dirancang untuk memberikan pengalaman kuliner yang tak terlupakan, membawa kehangatan dan keunikan budaya Indonesia ke setiap meja. Percayakan kebutuhan catering Anda kepada kami dan nikmati layanan istimewa penuh cita rasa khas Nusantara.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu" class="menus d-flex flex-column justify-content-center align-items-center">
+        <div class="menu-title text-light">
+            <p>Menus</p>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs" id="menuTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link menu-tab-button active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link menu-tab-button" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="special" aria-selected="false">Special</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link menu-tab-button" id="regular-tab" data-bs-toggle="tab" data-bs-target="#regular" type="button" role="tab" aria-controls="regular" aria-selected="false">Regular</button>
+            </li>
+        </ul>
+
+        <!-- Tabs Content -->
+        <div class="tab-content" id="menuTabsContent">
+            <!-- All Menus -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                <div class="menu-items">
+                    <div class="menu-content">
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-1">
+                                <p class="text-light menu-card-title">NASI TUMPENG</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp150,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Tumpeng"</h3>
+                                    <p class="rounded">Nikmati nasi tumpeng dengan berbagai pilihan lauk. Ideal untuk merayakan momen spesial seperti acara keluarga, ulang tahun, atau perayaan lainnya.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp150,000</p> 
+                                </div>
+                            </div>
+                        </div>                                 
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-2">
+                                <p class="text-light menu-card-title">NASI BOX</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp25,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi BOX"</h3>
+                                    <p class="rounded">Sajian praktis dan lezat dengan pilihan lauk yang bisa disesuaikan sesuai selera Anda. Cocok untuk acara kantor, makan siang bersama, atau perayaan kecil.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp25,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-3">
+                                <p class="text-light menu-card-title">NASI BAKAR</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp22,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Bakar"</h3>
+                                    <p class="rounded"> Sajian nasi bakar lezat dengan bumbu khas dan isian menggugah selera. Ideal untuk makan siang atau acara spesial dengan cita rasa memanjakan lidah.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp22,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-4">
+                                <p class="text-light menu-card-title">NASI RAMES</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp10,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Rames"</h3>
+                                    <p class="rounded"> Hidangan nasi dengan berbagai lauk dan sayuran yang disajikan dalam satu porsi lengkap. Ideal untuk makan siang atau acara spesial.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp10,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-5">
+                                <p class="text-light menu-card-title">AYAM PANGGANG</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp140,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Ayam Panggang"</h3>
+                                    <p class="rounded">Sajian ayam panggang dengan bumbu khas yang dipanggang hingga sempurna. Ideal untuk makan malam atau acara spesial.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp140,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-6">
+                                <p class="text-light menu-card-title">NASI KUNING</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp22,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Kuning"</h3>
+                                    <p class="rounded">Hidangan nasi kuning dengan lauk pelengkap yang menggugah selera, cocok untuk merayakan momen spesial atau makan siang.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp22.000</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Menus -->
+            <div class="tab-pane fade" id="special" role="tabpanel" aria-labelledby="special-tab">
+                <div class="menu-items menu-items-special">
+                    <div class="menu-content">
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-1">
+                                <p class="text-light menu-card-title">NASI TUMPENG</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp150,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Tumpeng"</h3>
+                                    <p class="rounded">Nikmati nasi tumpeng dengan berbagai pilihan lauk. Ideal untuk merayakan momen spesial seperti acara keluarga, ulang tahun, atau perayaan lainnya.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp150,000</p> 
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-5">
+                                <p class="text-light menu-card-title">AYAM PANGGANG</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp140,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Ayam Panggang"</h3>
+                                    <p class="rounded">Sajian ayam panggang dengan bumbu khas yang dipanggang hingga sempurna. Ideal untuk makan malam atau acara spesial.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp140,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Regular Menus -->
+            <div class="tab-pane fade" id="regular" role="tabpanel" aria-labelledby="regular-tab">
+                <div class="menu-items menu-items-regular">
+                    <div class="menu-content">
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-2">
+                                <p class="text-light menu-card-title">NASI BOX</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp25,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi BOX"</h3>
+                                    <p class="rounded">Sajian praktis dan lezat dengan pilihan lauk yang bisa disesuaikan sesuai selera Anda. Cocok untuk acara kantor, makan siang bersama, atau perayaan kecil.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp25,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-4">
+                                <p class="text-light menu-card-title">NASI RAMES</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp10,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Rames"</h3>
+                                    <p class="rounded"> Hidangan nasi dengan berbagai lauk dan sayuran yang disajikan dalam satu porsi lengkap. Ideal untuk makan siang atau acara spesial.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp10,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-3">
+                                <p class="text-light menu-card-title">NASI BAKAR</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp22,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Bakar"</h3>
+                                    <p class="rounded"> Sajian nasi bakar lezat dengan bumbu khas dan isian menggugah selera. Ideal untuk makan siang atau acara spesial dengan cita rasa memanjakan lidah.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp22,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu d-flex justify-content-between align-items-center">
+                            <div class="item item-6">
+                                <p class="text-light menu-card-title">NASI KUNING</p>
+                                <div class="price-tag">
+                                    <h4 class="price-outer">Rp22,000</h4>
+                                </div>
+                                <div class="layer">
+                                    <h3>"Nasi Kuning"</h3>
+                                    <p class="rounded">Hidangan nasi kuning dengan lauk pelengkap yang menggugah selera, cocok untuk merayakan momen spesial atau makan siang.</p>
+                                    <p class="text-light price mt-1 rounded price-text">Rp22,000</p> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div id="faq" class="faq d-flex flex-column align-items-center pt-5 pb-5">
+            <div id="faqTitle" class="faq-title text-light mb-4"> <!-- Menambahkan kelas mb-4 untuk margin bawah -->
+                <p class="faq-title-text">Frequently Asked Questions</p>
+            </div>
+            <div class="faq-content w-75">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button accordion-button-1 faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Jasa apa yang Anda tawarkan?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-light">
+                                Kami menawarkan berbagai layanan katering termasuk resepsi pernikahan, acara perusahaan, dan pesta pribadi. Menu kami mencakup berbagai hidangan tradisional Indonesia untuk memenuhi semua selera.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Bagaimana cara Saya memesan?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-light">
+                                Anda dapat memesan dengan menghubungi kami melalui formulir kontak di situs web kami atau dengan menghubungi kami melalui WhatsApp atau direct message Instagram.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button accordion-button-3 collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Apakah anda menawarkan jasa Delivery?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body accordion-body-3 text-light">
+                                Ya, kami menawarkan layanan pengiriman untuk seputar Kota Semarang. Harap beri tahu kami tentang kebutuhan pengiriman Anda saat melakukan pemesanan.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TESTIMONIAL -->
+        <section id="testimonials" class="testimonials">
+            <div class="container testimonials-container">
+                <h2 class="text-center mb-4 text-light">Testimonials</h2>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-body">
+                                            <p class="card-text">"Riffanash Catering kasih layanan top dan makanan Nusantara yang mantap. Saya benar-benar puas!"</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="card-title">Ayu Pratiwi</h5>
+                                                    <p class="card-subtitle text-muted">Event Organizer</p>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                <img src="assets/profilePicture1.png" class="rounded-circle" alt="Ayu Pratiwi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-body">
+                                            <p class="card-text">"Hidangan dari Riffanash Catering top banget, enak dan bikin ngiler. Memuaskan sekali dan benar-benar luar biasa!"</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="card-title">Riko Aditya</h5>
+                                                    <p class="card-subtitle text-muted">Event Organizer</p>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                <img src="assets/profilePicture1.png" class="rounded-circle" alt="Riko Aditya">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="card border-0 shadow">
+                                        <div class="card-body">
+                                            <p class="card-text">"Pelayanan dari Riffanash Catering sangat profesional. Hidangan yang disajikan enak banget dan berkualitas tinggi!"</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="card-title">Dani Ramadhan</h5>
+                                                    <p class="card-subtitle text-muted">Event Organizer</p>
+                                                    <div class="rating">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                    </div>
+                                                </div>
+                                                <img src="assets/profilePicture1.png" class="rounded-circle" alt="Dani Ramadhan">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Panah Navigasi -->
+                    <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        
+
+
+    </div>
+
+        
+    
+
+    <!-- CONTACT -->
+    <div id="contact" class="contact d-flex flex-column align-items-center pt-3">
+        <div class="contact-title d-flex justify-content-center">
+            <p class="text-light">Contact</p>
+            <p class="text-warning">Us</p>
+            <p class="text-light">to</p>
+            <p class="text-warning">Order</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-content-left d-flex flex-column justify-content-center">
+                <div class="location-title text-light">
+                    <p>Our Location :</p>
+                </div>
+                <div class="location-text text-light">
+                    <p>Meteseh, Tembalang, <br>Kota Semarang, Jawa Tengah</p>
+                </div>
+                <iframe id="mapLocation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15838.102593793416!2d110.45418324478716!3d-7.064883837001528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708e8f87cb0111%3A0x5027a76e356dc80!2sMeteseh%2C%20Kec.%20Tembalang%2C%20Kota%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1722913408031!5m2!1sid!2sid" 
+                width="100%" 
+                height="290" 
+                style="border: 5px solid #750405;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+            <div class="contact-content-left d-flex flex-column justify-content-center">
+                <div class="location-title contact-text text-light">
+                    <p>Contact :</p>
+                </div>
+                <div class="social-buttons d-flex justify-content-between align-items-center">
+                    <button onclick="toWhatsapp()" class="social-button whatsapp d-flex align-items-center justify-content-between">
+                        <p class="text-light">Whatsapp</p>
+                        <img class="img-fluid" src="assets/socialLogo1.png" alt="">
+                    </button>
+                    <button onclick="toInstagram()" class="social-button instagram d-flex align-items-center justify-content-between">
+                        <p class="text-dark">Instagram</p>
+                        <img class="img-fluid" src="assets/socialLogo2.png" alt="">
+                    </button>
+                </div>
+                <div class="contact-form mt-4">
+                    <form action="#" method="post" class="form-width">
+                        <div class="form-group mb-3">
+                            <label for="name" class="text-light">Nama:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="whatsapp" class="text-light">No. Whatsapp (+62):</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" class="form-control" pattern="\+62[0-9]{10,13}" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="message" class="text-light">Pesan:</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Kirim</button>
+                    </form>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+        
+    <!-- FOOTER -->
+    <div class="footer d-flex justify-content-between align-items-start">
+        <div class="footer-left d-flex align-items-center">
+            <img src="assets/riffanashLogo.png" alt="Riffanash Catering Logo" class="footer-logo mr-3">
+            <div>
+                <div class="footer-title">
+                    <p class="text-light">Riffanash Catering</p>
+                </div>
+                <div class="footer-text">
+                    <p class="text-light">© 2024 Riffanash Catering. Kami siap memenuhi kebutuhan catering Anda dengan cita rasa terbaik dan layanan memuaskan. Dengan pilihan menu Nusantara autentik, Riffanash Catering menjamin hidangan lezat untuk setiap acara. Hubungi kami untuk merencanakan catering Anda.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-right d-flex flex-column">
+                <div class="footer-contact-title">
+                    <p class="text-light">Sections</p>
+                </div>
+                <div class="footer-section mt-3">
+                    <a href="#" class="text-light d-block mb-2">Home</a>
+                    <a href="#" class="text-light d-block mb-2">About Us</a>
+                    <a href="#" class="text-light d-block mb-2">Menus</a>
+                    <a href="#" class="text-light d-block mb-2">FAQ</a>
+                </div>
+            </div>
+            <div class="footer-middle d-flex flex-column">
+                <div class="footer-contact">
+                    <p class="footer-contact-title text-light">Our Contacts</p>
+                    <div class="footer-contact-info">
+                        <p class="text-light">Instagram: @riffanash.catering</p>
+                        <p class="text-light">Phone/WA: +62 812-3456-7890</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
